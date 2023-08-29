@@ -1,0 +1,388 @@
+
+
+
+
+<!--HTML boiler plate:-->
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="utf-8">
+        <title>TTS Samples</title>
+        <!--set margin on page and font type of all text-->
+        <style>
+            body {
+                margin: 50px 100px;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: beige
+            }
+
+            h2{
+                margin-top: 50px;
+            }
+
+            table{
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th{
+                font-size: 18px;
+            }
+
+            td:has(audio){
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            audio{
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Samples for the paper <i>"Prompt-to-Speech Using a Large Language Model"</i></h1>
+
+        <h2>Discourse neutral task</h2>
+        <p>
+            We first prompt the model to make only local modifications based on the target text for a
+            discourse neutral task. We measure perceived naturalness for this task to evaluate whether
+            the local modifications, in particular, have a measurable impact on perceived naturalness.
+            We compare the proposed method with the baseline model and the two reference-based models
+            and use validation utterances from the LJSpeech corpus.
+        </p>
+        <table>
+            <tr>
+                <th>Ground-truth</th>
+                <th>Style-token oracle</th>
+                <th>Prosody-transfer oracle</th>
+                <th>Baseline</th>
+                <th>Proposed</th>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/neutral/ground_truth/sample_0.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/gst/sample_0.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/pt/sample_0.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/vanilla/sample_0.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/proposed/sample_0.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/neutral/ground_truth/sample_1.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/gst/sample_1.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/pt/sample_1.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/vanilla/sample_1.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/proposed/sample_1.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/neutral/ground_truth/sample_2.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/gst/sample_2.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/pt/sample_2.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/vanilla/sample_2.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/proposed/sample_2.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><audio controls><source src="samples/neutral/ground_truth/sample_3.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/gst/sample_3.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/pt/sample_3.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/vanilla/sample_3.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/neutral/proposed/sample_3.wav" type="audio/mpeg"></audio></td>
+            </tr>
+        </table>
+
+
+        <h2>Target speaking style task</h2>
+        <p>
+            We measure the perceived "appropriateness" of utterances to evaluate the proposed method
+            in predicting prosody for a given target speaking style. Participants are shown the
+            target text and speaking style when performing this evaluation. We create a small text
+            corpus for this where we first select a number speaking styles and, for each one, then
+            generate a set of target texts that we deem would be appropriate for that style.
+        </p>
+        <table>
+            <tr>
+                <th>Target Speaking Style</th>
+                <th>Text</th>
+                <th>Baseline</th>
+                <th>Proposed Method</th>
+            </tr>
+            <tr>
+                <td><i>Afraid for their life</i></td>
+                <td><i>Please, don't hurt me! I'll give you everything I have, just let me go!</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_0.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_0.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>Somebody help me! Help me, please!</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_1.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_1.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i>In a hurry</i></td>
+                <td><i>Time is running out, we have to make it to the meeting!</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_2.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_2.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>We have to hurry if we want to catch the last train!</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_3.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_3.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i>Murmuring</i></td>
+                <td><i>Just keep calm, everything will be alright</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_4.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_4.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>I should have listened to my gut</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_5.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_5.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i>Talking to a child</i></td>
+                <td><i>It's okay to make mistakes, that's how we learn.</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_6.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_6.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>I love you more than anything in the world.</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_7.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_7.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i>Explaining with frustration</i></td>
+                <td><i>The bowl is in the cabinet furthest to the left.</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_8.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_8.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>It's not Joe, it's Frank who's coming to the party.</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_9.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_9.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i>Talking like a robot</i></td>
+                <td><i>I'm afraid I can't do that.</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_10.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_10.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i></i></td>
+                <td><i>That is not a valid command.</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_11.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_11.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td><i>In a fight with someone</i></td>
+                <td><i>You will regret this!</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_12.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_12.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>This fight will be over as fast as it started!</i></td>
+                <td><audio controls><source src="samples/style/vanilla/sample_13.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/style/proposed/sample_13.wav" type="audio/mpeg"></audio></td>
+            </tr>
+        </table>
+
+
+        <h2>Dialogue task.</h2>
+        <p>
+            We also evaluate the appropriateness of utterances in the context of a two-line dialogue.
+            Here, the LLM is instructed to make modifications based only on the previous line in a dialogue
+            and the target text, not a target style. We first choose six "hidden" speaking
+            styles and then generate 10 two-line dialogues where the target text would naturally fit the
+            speaking style.
+        </p>
+        <table>
+            <tr>
+                <th>Style</th>
+                <th>Previous line</th>
+                <th>Target text</th>
+                <th>Baseline</th>
+                <th>Proposed Method</th>
+            </tr>
+            <tr>
+                <td><i>Having a friendly conversation</i></td>
+
+                <td><i>I love your outfit today, where did you get it?</i></td>
+                <td><i>Thank you! I actually got it on sale at a boutique downtown.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_0.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_0.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>I heard you're going on vacation soon, where are you headed?</i></td>
+                <td><i>Yeah, I'm going to Hawaii! I can't wait to relax on the beach and soak up some sun.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_1.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_1.wav" type="audio/mpeg"></audio></td>
+            </tr>
+
+            <tr>
+                <td><i>In a heated argument</i></td>
+                <td><i>I can't believe you did that!</i></td>
+                <td><i>What's the big deal? It's not like it affects you.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_2.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_2.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>You never pay attention to me anymore.</i></td>
+                <td><i>That's because you're always nagging me about everything! </i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_3.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_3.wav" type="audio/mpeg"></audio></td>
+            </tr>
+
+            <tr>
+                <td><i>Formal discussion</i></td>
+                <td><i>According to the data, we're seeing a decline in sales.</i></td>
+                <td><i>Yes, I agree. However, we should also consider the external factors affecting our industry.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_4.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_4.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>We need to review the proposed changes to our company's mission statement.</i></td>
+                <td><i>Agreed. We should schedule a meeting with the stakeholders to discuss this further.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_5.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_5.wav" type="audio/mpeg"></audio></td>
+            </tr>
+
+            <tr>
+                <td><i>Sarcastic response</i></td>
+                <td><i>Nice weather we're having today.</i></td>
+                <td><i>Oh yeah, I love sweating through my clothes every five minutes.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_6.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_6.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>I can't believe you forgot my birthday again.</i></td>
+                <td><i>Oh, I'm sorry. I must have mistaken you for someone who actually matters.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_7.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_7.wav" type="audio/mpeg"></audio></td>
+            </tr>
+
+            <tr>
+                <td><i>Excited</i></td>
+                <td><i>I got the lead role in the play!</i></td>
+                <td><i>That's amazing! Congratulations, you're going to be fantastic!</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_8.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_8.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>Where are we going?</i></td>
+                <td><i>Prepare yourself because we are going to Disneyland!</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_9.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_9.wav" type="audio/mpeg"></audio></td>
+            </tr>
+
+            <tr>
+                <td><i>Apologizing</i></td>
+                <td><i>You missed our meeting yesterday.</i></td>
+                <td><i>I know, I'm sorry. Something urgent came up and I wasn't able to make it.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_10.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_10.wav" type="audio/mpeg"></audio></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><i>You were supposed to bring the food to the party.</i></td>
+                <td><i>I'm sorry, I completely forgot. Let me order some food delivery right now.</i></td>
+                <td><audio controls><source src="samples/dialogue/vanilla/sample_11.wav" type="audio/mpeg"></audio></td>
+                <td><audio controls><source src="samples/dialogue/proposed/sample_11.wav" type="audio/mpeg"></audio></td>
+            </tr>
+        </table>
+    </body>
+
+    <h2>Example prompt</h2>
+    <p>The following is an example prompt that was used to adjust duration, pitch and energy of a text given a target speaking style:</p>
+
+    <h3>Prompt:</h3>
+    <pre>
+        <code>
+I am generating speech but I want to make it more prosodically appropriate for a target speaking style.
+Assume that the speech that I currently have sounds as if spoken in a neutral discourse.
+I want to change the pitch, energy and duration of the speech that I have synthesised to fit the text better.
+
+I want you to make the following types of changes to the pitch, energy and duration of my synthesised speech:
+
+1. Utterance-level changes: You can increase or decrease pitch, energy and duration for the whole utterance to
+convey emotions and expressions. For each of pitch, energy and duration, you should pick a value between -5 and 5:
+    * A negative value will decrease utterance-level pitch, energy or duration and a value of -5
+      will decrease it as much as possible.
+    * A positive value will increase utterance-level pitch, energy or duration and a value of 5
+      will increase it as much as possible.
+    * A value of 0 will leave the value as is.
+(Note that increasing duration will make the speaker sound slower.)
+
+2. Word-level changes: You can increase pitch, energy and duration for a specific word to emphasise it or
+arbitrarily as you see fit. For each of pitch, energy and duration, you should pick a value between 0 and 5:
+    * A value of 0 will leave the value as is.
+    * A value higher than that will increase the word-level pitch, energy or duration.
+      The higher the value, the more it increases.
+
+Rules:
+1. You should make your predictions without considering who the speaker is.
+2. You have to follow the formatting instructions below.
+3. You should provide reasoning for your suggestions at the end of your response.
+4. You have to make word-level suggestions for every word in the target text.
+5. You don't have to make suggest changes for punctuation symbols or spaces.
+6. Your suggestions have to make sense. For example you can't recommend a negative value
+   for utterance-level pitch but then say in your reasoning that pitch should be increased.
+
+Formatting instructions:
+Provide your utterance-level changes in a table like the one below:
+|Pitch|Energy|Duration|
+|---|---|---|
+|your suggested pitch change|your suggested energy change|your suggested duration change|
+
+Provide your word-level changes in a table like the one below:
+|Word|Pitch|Energy|Duration|
+|---|---|---|---|
+|word 1|suggested pitch change for word 1|suggested energy change for word 1|suggested duration change for word 1|
+|word 2|suggested pitch change for word 2|suggested energy change for word 2|suggested duration change for word 2|
+...
+
+Your first example is the following:
+Target style: Talking to a child
+Target text: I will always take care of you!
+        </code>
+    </pre>
+
+    <h3>Response:</h3>
+
+    <pre>
+        <code>
+Here are my suggested prosodic changes for the given target text in the style of talking to a child:
+
+Pitch	Energy	Duration
+2	2	1
+
+Word	Pitch	Energy	Duration
+I	0	1	0
+will	0	0	0
+always	1	1	0
+take	0	0	0
+care	0	1	1
+of	0	0	0
+you	2	2	1
+
+Just a slight increase in pitch, energy and duration is recommended to make the speech sound
+more cheerful and caring.
+
+For word-level changes, the word "always" should be emphasised by a slight increase in pitch
+and energy to indicate that the speaker is making a promise to the child. The word "care"
+should have a higher energy and longer duration to make the speaker sound more caring and
+empathetic towards the child. The word "you" should have a significant increase in pitch,
+energy and duration to make the child feel loved and appreciated.
+        </code>
+    </pre>
+
+
+</html>
